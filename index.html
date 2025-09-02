@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNIFIND - Campus Lost and Found Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // enable dark mode via class
+    }
+  </script>
+</head>
+
+<body class="bg-white dark:bg-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+
+        <!-- Logo -->
+        <a href="index.html" class="font-bold text-3xl text-blue-600">UNIFIND</a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-4 items-center">
+          <a href="index.html"
+            class="text-white bg-blue-600 border-2 border-blue-600 px-3 py-1 rounded-md text-sm
+                   hover:bg-blue-800 hover:border-blue-800 transition">
+            Home
+          </a>
+
+          <a href="report.html"
+            class="text-gray-700 bg-gray-200 border-2 border-gray-200 px-3 py-1 rounded-md text-sm
+                   hover:bg-blue-600 hover:text-white
+                   dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-blue-600 dark:hover:text-white
+                   transition">
+            Report Item
+          </a>
+
+          <a href="listings.html"
+            class="text-gray-700 bg-gray-200 border-2 border-gray-200 px-3 py-1 rounded-md text-sm
+                   hover:bg-blue-600 hover:text-white
+                   dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-blue-600 dark:hover:text-white
+                   transition">
+            View Listings
+          </a>
+        </div>
+
+        <!-- Right Side (Theme Toggle + Auth Buttons) -->
+        <div class="hidden md:flex space-x-4 items-center">
+          <!-- Dark Mode Toggle -->
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer">
+            <div
+              class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300"></div>
+            <div
+              class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform duration-300"></div>
+          </label>
+
+          <!-- Auth Buttons -->
+          <a href="login.html"
+            class="text-white bg-blue-600 border-2 border-blue-600 px-3 py-1 rounded-md text-sm
+                   hover:bg-blue-800 hover:border-blue-800 transition">
+            Login
+          </a>
+          <a href="signup.html"
+            class="text-blue-600 bg-white border-2 border-blue-600 px-3 py-1 rounded-md text-sm
+                   dark:text-white dark:bg-gray-800 dark:border-gray-600
+                   hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition">
+            Signup
+          </a>
+        </div>
+
+        <!-- Mobile Auth Buttons -->
+        <div class="flex space-x-2 items-center md:hidden">
+          <a href="login.html"
+            class="text-white bg-blue-600 border-2 border-blue-600 px-3 py-1 rounded-md text-sm
+                   hover:bg-blue-800 hover:border-blue-800 transition">
+            Login
+          </a>
+          <a href="signup.html"
+            class="text-blue-600 bg-white border-2 border-blue-600 px-3 py-1 rounded-md text-sm
+                   dark:text-white dark:bg-gray-800 dark:border-gray-600
+                   hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition">
+            Signup
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="bg-[url('HomeImage.png')] bg-cover bg-center w-full h-[calc(100vh-64px)] relative">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4 pt-20">
+      <h1 class="text-white text-3xl md:text-5xl font-bold mb-4">Lost & Found Management System</h1>
+      <p class="text-white text-lg md:text-xl mb-6">Easily report and retrieve lost items with our system.</p>
+      <a href="report.html"
+        class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-md text-sm hover:bg-blue-800 transition">Report
+        Item</a>
+
+      <!-- Feature Boxes (Desktop only) -->
+      <div class="hidden md:flex mt-12 justify-center gap-6 w-full max-w-6xl">
+        <div
+          class="bg-white dark:bg-gray-800 text-center rounded-lg p-6 shadow-md w-1/3 transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/50 h-32">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Easy Reporting</h3>
+          <p class="text-gray-600 dark:text-gray-300">Quickly submit lost and found reports.</p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 text-center rounded-lg p-6 shadow-md w-1/3 transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/50 h-32">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Verified Listings</h3>
+          <p class="text-gray-600 dark:text-gray-300">Ensuring accurate and valid reports.</p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 text-center rounded-lg p-6 shadow-md w-1/3 transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/50 h-32">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Secure System</h3>
+          <p class="text-gray-600 dark:text-gray-300">Your data is safe and protected.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section (Mobile only) -->
+  <section class="md:hidden max-w-6xl mx-auto py-12 px-6 grid gap-6">
+    <div
+      class="bg-white dark:bg-gray-800 text-center rounded-lg p-6 shadow-md transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/50">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white ">Easy Reporting</h3>
+      <p class="text-gray-600 dark:text-gray-300">Quickly submit lost and found reports.</p>
+    </div>
+    <div
+      class="bg-white dark:bg-gray-800 text-center rounded-lg p-6 shadow-md transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/50">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Verified Listings</h3>
+      <p class="text-gray-600 dark:text-gray-300">Ensuring accurate and valid reports.</p>
+    </div>
+    <div
+      class="bg-white dark:bg-gray-800 text-center rounded-lg p-6 shadow-md transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/50">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Secure System</h3>
+      <p class="text-gray-600 dark:text-gray-300">Your data is safe and protected.</p>
+    </div>
+  </section>
+
+  <!-- Footer (Mobile only) -->
+  <footer class="md:hidden bg-gray-900 text-gray-400 py-6">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+      <p class="mb-4">© 2025 UNIFIND. All Rights Reserved.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms of Service</a>
+        <a href="#" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Select the toggle checkbox
+    const toggle = document.querySelector('input[type="checkbox"]');
+
+    // Check if dark mode is saved in localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      toggle.checked = true;
+    }
+
+    // Listen for changes on the toggle
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark'); // save preference
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light'); // save preference
+      }
+    });
+  </script>
+
+</body>
+</html>
