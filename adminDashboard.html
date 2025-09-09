@@ -8,45 +8,57 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class', // enable dark mode via class
+      darkMode: 'class',
     }
   </script>
 </head>
 
-<body class="bg-white dark:bg-gray-900 font-sans m-0 overflow-hidden">
+<body class="bg-white dark:bg-gray-900 m-0 overflow-hidden">
 
   <!-- Navbar -->
-  <nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-md h-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-      <div class="flex justify-between items-center h-full">
+  <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
 
         <!-- Logo -->
-        <a href="index.html" class="font-bold text-3xl text-blue-600 ">UNIFIND</a>
+        <a href="index.html" class="font-bold text-3xl text-blue-600">UNIFIND</a>
 
         <!-- Right Side -->
-        <div class="flex space-x-3 items-center">
+        <div class="flex items-center space-x-4">
+
           <!-- Dark Mode Toggle -->
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
-            <div class="w-10 h-5 sm:w-12 sm:h-6 bg-gray-300 dark:bg-gray-600 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300"></div>
-            <div class="absolute left-0.5 top-0.5 w-4 h-4 sm:w-5 sm:h-5 bg-white rounded-full shadow-md peer-checked:translate-x-5 sm:peer-checked:translate-x-6 transition-transform duration-300"></div>
+          <label class="relative cursor-pointer">
+            <input type="checkbox" id="darkToggle" class="sr-only peer">
+            <div class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300"></div>
+            <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform duration-300"></div>
           </label>
 
           <!-- User Info -->
-          <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 px-2 py-1 sm:px-3 sm:py-1 rounded-md shadow-md text-gray-700 dark:text-gray-300 text-xs sm:text-sm">
-            <div class="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4 text-white" fill="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
-                           1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 
-                           1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-              </svg>
-            </div>
-            <span>admin</span>
-          </div>
-        </div>
+          <div class="relative">
+            <button id="userMenuButton"
+              class="flex items-center space-x-2 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md shadow-md text-gray-800 dark:text-gray-100 text-sm border border-gray-300 dark:border-gray-600">
+              <div class="w-7 h-7 rounded-full bg-gray-400 dark:bg-gray-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+              </div>
+              <span>user</span>
+            </button>
 
+            <div id="userDropdown"
+              class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-lg z-50">
+              <a href="/dashboard"
+                class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">
+                Dashboard
+              </a>
+              <a href="/logout"
+                class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">
+                Logout
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </nav>
@@ -56,11 +68,11 @@
 
     <!-- Sidebar -->
     <aside class="hidden md:block md:w-48 lg:w-64 bg-white dark:bg-gray-900 p-6 border-r border-gray-200 dark:border-gray-700 shadow-lg h-full">
-      <h2 class="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-4 tracking-wide">Admin Panel</h2>
+      <h2 class="text-lg font-semibold text-blue-500 dark:text-blue-400 mb-4 tracking-wide">Admin Panel</h2>
       <nav class="space-y-2">
-        <a href="#" class="block px-4 py-2 rounded-lg bg-blue-600 text-white shadow-md">Dashboard</a>
-        <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Manage Users</a>
-        <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Manage Reports</a>
+        <a href="adminDashboard.html" class="block px-4 py-2 rounded-lg bg-blue-600 text-white shadow-md">Dashboard</a>
+        <a href="manageusers.html" class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Manage Users</a>
+        <a href="managelistings.html" class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Manage Reports</a>
         <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Settings</a>
       </nav>
     </aside>
@@ -77,23 +89,15 @@
 
       <!-- Stats -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <!-- Total Reports -->
-        <div
-          class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#60A5FA]">
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#60A5FA]">
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Total Reports</p>
           <p class="text-3xl font-bold text-blue-600 dark:text-blue-400">0</p>
         </div>
-
-        <!-- Resolved Cases -->
-        <div
-          class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#34D399]">
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#34D399]">
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Resolved Cases</p>
           <p class="text-3xl font-bold text-green-600 dark:text-green-400">0</p>
         </div>
-
-        <!-- Pending Reports -->
-        <div
-          class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#F87171]">
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#F87171]">
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Pending Reports</p>
           <p class="text-3xl font-bold text-red-600 dark:text-red-400">0</p>
         </div>
@@ -121,7 +125,7 @@
         <div class="hidden md:block overflow-x-auto">
           <table class="min-w-full text-left border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
             <thead class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm">
-              <tr>
+                            <tr>
                 <th class="px-4 py-2">ID</th>
                 <th class="px-4 py-2">Item</th>
                 <th class="px-4 py-2">Status</th>
@@ -133,28 +137,25 @@
             </thead>
             <tbody>
               <tr>
-                <td colspan="7" class="text-center text-gray-500 dark:text-gray-400 py-4">No verified reports found</td>
+                <td colspan="7" class="text-center text-gray-500 dark:text-gray-400 py-4">
+                  No verified reports found
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </main>
-
-    
   </div>
 
+  <!-- Scripts -->
   <script>
-    // Select the toggle checkbox
-    const toggle = document.querySelector('input[type="checkbox"]');
-
-    // Check if dark mode is saved in localStorage
+    // Dark mode toggle logic
+    const toggle = document.getElementById('darkToggle');
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
       toggle.checked = true;
     }
-
-    // Listen for changes on the toggle
     toggle.addEventListener('change', () => {
       if (toggle.checked) {
         document.documentElement.classList.add('dark');
@@ -164,8 +165,22 @@
         localStorage.setItem('theme', 'light');
       }
     });
+
+    // Dropdown toggle logic
+    const button = document.getElementById('userMenuButton');
+    const dropdown = document.getElementById('userDropdown');
+
+    button.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent bubbling
+      dropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
   </script>
 
 </body>
-
 </html>

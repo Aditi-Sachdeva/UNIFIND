@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Item</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 transition-colors duration-500 overflow-y-auto">
+  
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+
+        <!-- Logo -->
+        <a href="index.html" class="font-bold text-3xl text-blue-600">UNIFIND</a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-4 items-center">
+          <a href="index.html"
+             class="text-white bg-blue-600 border-2 border-blue-600 px-3 py-1 rounded-md text-sm hover:bg-blue-800 hover:border-blue-800 transition">
+             Home
+          </a>
+
+          <a href="report.html"
+             class="text-gray-900 bg-gray-200 border-2 border-gray-200 px-3 py-1 rounded-md text-sm hover:bg-blue-600 hover:text-white dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-blue-600">
+             Report Item
+          </a>
+
+          <a href="listings.html"
+             class="text-gray-900 bg-gray-200 border-2 border-gray-200 px-3 py-1 rounded-md text-sm hover:bg-blue-600 hover:text-white dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-blue-600">
+             View Listings
+          </a>
+        </div>
+
+        <!-- Right Side (Theme Toggle + User) -->
+        <div class="hidden md:flex space-x-4 items-center">
+
+          <!-- Theme Toggle -->
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input id="theme-toggle" type="checkbox" class="sr-only peer">
+            <div class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300"></div>
+            <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform duration-300"></div>
+          </label>
+
+          <!-- User Menu -->
+          <div class="relative inline-block text-left">
+            <button class="user-menu-button flex items-center space-x-2 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md shadow-md text-gray-800 dark:text-gray-100 text-sm focus:outline-none border border-gray-300 dark:border-gray-600">
+              <div class="w-7 h-7 rounded-full bg-gray-400 dark:bg-gray-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+              </div>
+              <span>user</span>
+            </button>
+
+            <div class="user-dropdown hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-lg z-50">
+              <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">Dashboard</a>
+              <a href="/logout" class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Toggle + User -->
+        <div class="flex space-x-2 items-center md:hidden">
+
+          <!-- Theme Toggle -->
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input id="theme-toggle-mobile" type="checkbox" class="sr-only peer">
+            <div class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300"></div>
+            <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform duration-300"></div>
+          </label>
+
+          <!-- User Button -->
+          <div class="relative inline-block text-left">
+            <button class="user-menu-button flex items-center space-x-2 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md shadow-md text-gray-800 dark:text-gray-100 text-sm focus:outline-none border border-gray-300 dark:border-gray-600">
+              <div class="w-7 h-7 rounded-full bg-gray-400 dark:bg-gray-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+              </div>
+              <span>user</span>
+            </button>
+
+            <div class="user-dropdown hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-lg z-50">
+              <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">Dashboard</a>
+              <a href="/logout" class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Form Section -->
+  <div class="pt-6 px-4 pb-8 flex justify-center items-start min-h-screen md:overflow-hidden overflow-auto">
+    <div class="w-full max-w-md bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold text-center text-blue-600 dark:text-blue-400 mb-4">Report Item</h2>
+      <form class="space-y-4">
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">Item Name</label>
+            <input type="text" class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">Category</label>
+            <select class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-400 focus:outline-none">
+              <option>Electronics</option>
+              <option>Accessories</option>
+              <option>Books</option>
+              <option>Others</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">Description</label>
+          <textarea class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-400 focus:outline-none" placeholder="Describe the item..."></textarea>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">Date & Time</label>
+            <input type="datetime-local" class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">Location</label>
+            <input type="text" class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">Status</label>
+            <select class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-400 focus:outline-none">
+              <option>Lost</option>
+              <option>Found</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">Contact Info</label>
+            <input type="text" class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-700 dark:text-gray-300 mb-1">Upload Image</label>
+          <input type="file" class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white border border-gray-400 dark:border-gray-600 file:cursor-pointer file:bg-gray-300 dark:file:bg-gray-700 file:text-black dark:file:text-white file:px-2 file:py-1 file:rounded file:hover:bg-gray-400 dark:file:hover:bg-gray-600" />
+        </div>
+
+        <button type="submit" class="w-full h-12 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded">Report Item</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('change', () => {
+        document.documentElement.classList.toggle('dark');
+        // Keep both toggles in sync
+        toggles.forEach(t => t.checked = toggle.checked);
+      });
+    });
+  </script>
+</body>
+</html>

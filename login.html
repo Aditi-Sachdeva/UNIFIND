@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <title>UNIFIND - Login</title>
+</head>
+<body id="page-body" class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white flex flex-col min-h-screen transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+
+        <!-- Left: Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="font-bold text-3xl text-blue-600">UNIFIND</a>
+        </div>
+
+        <!-- Center: Desktop Menu -->
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-white bg-blue-600 border-2 border-blue-600 px-3 py-1 rounded-md text-sm
+            hover:bg-blue-800 hover:border-blue-800 transition">
+            Home
+          </a>
+          <a href="report.html" class="text-gray-900 bg-gray-200 border-2 border-gray-200 px-3 py-1 rounded-md text-sm
+            hover:bg-blue-600 hover:text-white
+            dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-blue-600 dark:hover:text-white">
+            Report Item
+          </a>
+          <a href="listings.html" class="text-gray-900 bg-gray-200 border-2 border-gray-200 px-3 py-1 rounded-md text-sm
+            hover:bg-blue-600 hover:text-white
+            dark:text-white dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-blue-600 dark:hover:text-white">
+            View Listings
+          </a>
+        </div>
+
+        <!-- Right: Theme Toggle + Auth Buttons -->
+        <div class="hidden md:flex space-x-4 items-center">
+          <!-- Dark Mode Toggle (Desktop) -->
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input id="theme-toggle-desktop" type="checkbox" class="sr-only peer">
+            <div class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300"></div>
+            <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform duration-300"></div>
+          </label>
+
+          <!-- Auth Buttons -->
+          <a href="login.html" class="text-white bg-blue-600 border-2 border-blue-600 px-3 py-1 rounded-md text-sm hover:bg-blue-700 transition">Login</a>
+          <a href="signup.html" class="text-blue-600 bg-white border-2 border-blue-600 px-3 py-1 rounded-md text-sm dark:text-white dark:bg-gray-800 dark:border-gray-600 hover:bg-blue-600 hover:text-white transition">Signup</a>
+        </div>
+
+        <!-- Mobile Menu (Only Toggle) -->
+        <div class="flex items-center space-x-2 md:hidden">
+          <!-- Dark Mode Toggle (Mobile) -->
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input id="theme-toggle-mobile" type="checkbox" class="sr-only peer">
+            <div class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300"></div>
+            <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform duration-300"></div>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Box -->
+  <div class="flex flex-grow justify-center items-center p-4 dark:bg-gray-900">
+    <div class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-sm border border-gray-300 dark:border-blue-500 transition-colors duration-300">
+      <h2 class="text-2xl font-bold text-center text-blue-600 dark:text-blue-400 mb-6">Login</h2>
+      
+      <form action="#" method="POST" class="space-y-4">
+        <!-- Email -->
+        <div>
+          <label class="block text-sm mb-1 text-gray-800 dark:text-gray-200">Email</label>
+          <input type="email" required class="w-full p-2 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600 focus:outline-none focus:border-blue-600 dark:focus:border-blue-400" />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-sm mb-1 text-gray-800 dark:text-gray-200">Password</label>
+          <input type="password" required class="w-full p-2 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600 focus:outline-none focus:border-blue-600 dark:focus:border-blue-400" />
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="w-full bg-blue-600 dark:bg-blue-500 py-2 rounded-md text-white font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition">Login</button>
+      </form>
+
+      <p class="text-center text-sm text-gray-700 dark:text-gray-400 mt-4">
+        Don’t have an account?
+        <a href="signup.html" class="text-blue-600 dark:text-blue-400 hover:underline">Signup here</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const pageBody = document.getElementById('page-body');
+    const toggleDesktop = document.getElementById('theme-toggle-desktop');
+    const toggleMobile = document.getElementById('theme-toggle-mobile');
+
+    function toggleTheme() {
+      pageBody.classList.toggle('dark');
+    }
+
+    toggleDesktop.addEventListener('click', toggleTheme);
+    toggleMobile.addEventListener('click', toggleTheme);
+  </script>
+</body>
+</html>
