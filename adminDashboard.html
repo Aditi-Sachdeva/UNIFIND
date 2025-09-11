@@ -29,8 +29,11 @@
           <!-- Dark Mode Toggle -->
           <label class="relative cursor-pointer">
             <input type="checkbox" id="darkToggle" class="sr-only peer">
-            <div class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300"></div>
-            <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform duration-300"></div>
+            <div class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 transition-colors duration-300">
+            </div>
+            <div
+              class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-6 transition-transform duration-300">
+            </div>
           </label>
 
           <!-- User Info -->
@@ -38,13 +41,15 @@
             <button id="userMenuButton"
               class="flex items-center space-x-2 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-md shadow-md text-gray-800 dark:text-gray-100 text-sm border border-gray-300 dark:border-gray-600">
               <div class="w-7 h-7 rounded-full bg-gray-400 dark:bg-gray-600 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                 </svg>
               </div>
               <span>user</span>
             </button>
-
+            <!-- 
             <div id="userDropdown"
               class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-lg z-50">
               <a href="/dashboard"
@@ -55,7 +60,7 @@
                 class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">
                 Logout
               </a>
-            </div>
+            </div> -->
           </div>
 
         </div>
@@ -67,13 +72,19 @@
   <div class="flex flex-col md:flex-row h-[calc(100vh-4rem)] overflow-hidden">
 
     <!-- Sidebar -->
-    <aside class="hidden md:block md:w-48 lg:w-64 bg-white dark:bg-gray-900 p-6 border-r border-gray-200 dark:border-gray-700 shadow-lg h-full">
+    <aside
+      class="hidden md:block md:w-48 lg:w-64 bg-white dark:bg-gray-900 p-6 border-r border-gray-200 dark:border-gray-700 shadow-lg h-full">
       <h2 class="text-lg font-semibold text-blue-500 dark:text-blue-400 mb-4 tracking-wide">Admin Panel</h2>
       <nav class="space-y-2">
         <a href="adminDashboard.html" class="block px-4 py-2 rounded-lg bg-blue-600 text-white shadow-md">Dashboard</a>
-        <a href="manageusers.html" class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Manage Users</a>
-        <a href="managelistings.html" class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Manage Reports</a>
-        <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Settings</a>
+        <a href="manageusers.html"
+          class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Manage
+          Users</a>
+        <a href="managelistings.html"
+          class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Manage
+          Reports</a>
+        <a href="#"
+          class="block px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-gray-300 shadow-md">Settings</a>
       </nav>
     </aside>
 
@@ -82,22 +93,28 @@
 
       <!-- Info Boxes (mobile only) -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center md:hidden">
-        <div class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white py-2 rounded-lg shadow-md">Admin Dashboard</div>
-        <div class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white py-2 rounded-lg shadow-md">Manage Users</div>
-        <div class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white py-2 rounded-lg shadow-md">Verified Reports</div>
+        <div class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white py-2 rounded-lg shadow-md">Admin
+          Dashboard</div>
+        <div class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white py-2 rounded-lg shadow-md">Manage Users
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white py-2 rounded-lg shadow-md">Verified
+          Reports</div>
       </div>
 
       <!-- Stats -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#60A5FA]">
+        <div
+          class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#60A5FA]">
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Total Reports</p>
           <p class="text-3xl font-bold text-blue-600 dark:text-blue-400">0</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#34D399]">
+        <div
+          class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#34D399]">
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Resolved Cases</p>
           <p class="text-3xl font-bold text-green-600 dark:text-green-400">0</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#F87171]">
+        <div
+          class="bg-white dark:bg-gray-900 p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_#F87171]">
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Pending Reports</p>
           <p class="text-3xl font-bold text-red-600 dark:text-red-400">0</p>
         </div>
@@ -105,11 +122,12 @@
 
       <!-- Verified Reports -->
       <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-4 border border-gray-200 dark:border-gray-700">
-        <p class="flex justify-center font-semibold text-lg text-blue-600 dark:text-blue-400 mb-2 tracking-wide">Verified Reports</p>
+        <p class="flex justify-center font-semibold text-lg text-blue-600 dark:text-blue-400 mb-2 ">Verified Reports</p>
 
         <!-- Mobile Cards -->
         <div class="md:hidden space-y-4">
-          <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700">
+          <div
+            class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700">
             <p><span class="font-semibold">ID:</span></p>
             <p><span class="font-semibold">Item:</span></p>
             <p><span class="font-semibold">Status:</span></p>
@@ -125,7 +143,7 @@
         <div class="hidden md:block overflow-x-auto">
           <table class="min-w-full text-left border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
             <thead class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm">
-                            <tr>
+              <tr>
                 <th class="px-4 py-2">ID</th>
                 <th class="px-4 py-2">Item</th>
                 <th class="px-4 py-2">Status</th>
@@ -183,4 +201,5 @@
   </script>
 
 </body>
+
 </html>
